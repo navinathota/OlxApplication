@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.zensar.entity.Advertisement;
-@Service
+@Service 
 public class AdvertiseServiceImp implements AdvertiseService{
 	static List<Advertisement> advertisement = new ArrayList<Advertisement>();
 	//public List<Advertisement> advertises=new ArrayList<Advertisement>();
