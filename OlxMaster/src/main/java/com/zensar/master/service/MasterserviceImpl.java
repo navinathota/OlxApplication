@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.zensar.master.entity.Category;
 import com.zensar.master.entity.Status;
-@Service
+@Service 
 public class MasterserviceImpl implements Masterservice{
 	 static List<Category> category=new ArrayList<Category>();
 	  static {
