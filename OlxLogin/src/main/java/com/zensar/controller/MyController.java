@@ -23,7 +23,7 @@ import com.zensar.service.LoginService;
 		private LoginService loginservice;
 		/*static List<User> users=new ArrayList<User>();
 			static {
-				users.add(new User(1L, "Anand", "Kulkarni", "anand", "anand123", "anand@gmail.com", 12345));
+				 users.add(new User(1L, "Anand", "Kulkarni", "anand", "anand123", "anand@gmail.com", 12345));
 			}*/
 			@GetMapping
 			public List<User> getAllUsers(@RequestHeader("userName") String username,@RequestHeader("password") String password) {
