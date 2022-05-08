@@ -1,0 +1,30 @@
+server:
+  port: 4000
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+    datasource:
+    url: jdbc:mysql://localhost:3306/login
+    username: root
+    password: Temp1234
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+  security:
+    user:
+      name: zensar
+      password: zensar@123
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+        
+      base-path: "/my-actuator"
+  endpoint:
+    shutdown:
+      enabled: true
