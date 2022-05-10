@@ -7,13 +7,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 public class Status {
 	@Id
-	private long id;
+	private long statusId;
 	private String status;
-
+	public String getStatusId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public String getStatus() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

@@ -6,10 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.zensar.master.dto.MasterDto;
 import com.zensar.master.entity.Category;
 import com.zensar.master.entity.Status;
+import com.zensar.master.exception.CustomException;
 import com.zensar.master.service.Masterservice;
 @RestController
 @RequestMapping("/advertise")
@@ -32,12 +35,16 @@ public class MasterController {
 	
 		}*/
 	@GetMapping(value="/category",produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public List<Category> getAllAdvertisementCategories() {
-	return masterservice.getAllAdvertisementCategories();
+	public List<MasterDto> getAllAdvertisementCategories(
+			@RequestParam(value = "pageNumber", defaultValue = "0", required = false) int pageNumber,
+			@RequestParam(value = "pageSize", defaultValue = "5", required = false) int pageSize)  throws CustomException {
+	return masterservice.getAllAdvertisementCategories(pageNumber,pageSize);
 	}
 	@GetMapping(value="/status",produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public List<Status> getAllAdvertisementStatus(){
-	return masterservice.getAllAdvertisementStatus();
+	public List<MasterDto> getAllAdvertisementStatus(
+			@RequestParam(value = "pageNumber", defaultValue = "0", required = false) int pageNumber,
+			@RequestParam(value = "pageSize", defaultValue = "5", required = false) int pageSize) throws CustomException{
+	return masterservice.getAllAdvertisementStatus(pageNumber,pageSize);
 	}
 
 }
