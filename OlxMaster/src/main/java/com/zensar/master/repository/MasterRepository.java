@@ -11,7 +11,7 @@ import com.zensar.master.entity.Category;
 @Repository
 public interface MasterRepository extends JpaRepository<Category,Long>{
 	
-	@Query(value="select * from olx_categories where category=:categ",nativeQuery=true)
+	@Query(value="select * from category where category=:category",nativeQuery=true)
 	List<Category> findOlxByCategory(@Param("category") String category);
 	
 }
