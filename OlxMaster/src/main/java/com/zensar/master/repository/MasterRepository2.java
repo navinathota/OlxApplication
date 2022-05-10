@@ -11,7 +11,7 @@ import com.zensar.master.entity.Status;
 @Repository
 public interface MasterRepository2 extends JpaRepository<Status,Long>{
 	
-	@Query(value="select * from olx_status_list where status=:statusList",nativeQuery=true)
+	@Query(value="select * from status where status=:statusList",nativeQuery=true)
 	List<Status> findOlxByStatus(@Param("statusList") String status);
 
 }
